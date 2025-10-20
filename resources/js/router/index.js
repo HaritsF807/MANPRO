@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Pages
 import Dashboard from "../pages/Dashboard.vue";
+import HistoryPembeli from "../pages/HistoryPembeli.vue";
 import ProdukIndex from "../pages/Produk/Index.vue";
 import ProdukCreate from "../pages/Produk/Create.vue";
 import ProdukEdit from "../pages/Produk/Edit.vue";
@@ -21,6 +22,8 @@ const routes = [
         props: true,
     },
 
+    // History Pembeli
+    { path: "/history", name: "history", component: HistoryPembeli },
     // Auth
     { path: "/login", name: "login", component: Login },
 ];
