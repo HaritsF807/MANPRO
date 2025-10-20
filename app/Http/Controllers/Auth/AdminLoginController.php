@@ -12,10 +12,11 @@ class AdminLoginController extends Controller
      * Menampilkan form login admin.
      */
     public function showLoginForm()
-    {
-        // Disarankan: resources/views/admin/auth/login.blade.php
-        return view('admin.auth.login');
-    }
+{
+    // SPA: biarkan Vue yang handle tampilan login
+    return redirect('/login'); // arahkan ke route Vue kamu
+}
+
 
     /**
      * Menangani proses login admin.
