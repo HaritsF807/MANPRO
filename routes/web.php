@@ -19,12 +19,11 @@ use App\Http\Controllers\Customer\PesananSayaController;
 
 // 🌼 Halaman utama (katalog produk)
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
 // --- RUTE UNTUK CUSTOMER ---
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
-
     // Profil
+    Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
     Route::post('/profil/update', [ProfilController::class, 'update'])->name('profil.update');
     Route::post('/profil/update-password', [ProfilController::class, 'updatePassword'])->name('profil.updatePassword');
